@@ -31,7 +31,7 @@ void adjust_brightness() {
   value = map(value, min + 25, max - 25, 0, 255);
   value = constrain(value, 0, 255);
 
-  if (state == HIGH)
+  if (HIGH == state)
     analogWrite(led, value);
 }
 
@@ -40,13 +40,9 @@ void adjust_rate() {
 
   unsigned long time = millis();
   if (time - prev > analogRead(potentiometer)) {
-    state = !state;
-    if (HIGH == state)
-      analogWrite(led, value);
-    else
-      analogWrite(led, 0);
-
     prev = time;
+    state = !state;
+    analogWrite(led, (HIGH == state) ? value : 0);
   }
 }
 
