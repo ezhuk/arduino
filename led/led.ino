@@ -2,33 +2,35 @@
 // Use of this source code is governed by the MIT license that can be found
 // in the LICENSE file.
 //
-// Schematics:
+// Control the LED brightness using a photoresistor and change the blinking
+// rate through a potentiometer.
 //
-//                   o +5V
-//                   |
-//       o PIN 9     |
-//       |          |¯| //
-//       |          | |``
-//      _|_         |_|
-//      \ / LED      |
-//      ¯|¯          |
-//       |           o--------o PIN A0
-//       |           |
-//       |           |
-//      |¯|         |¯|
-//      | | 330     | | 10K
-//      |_|         |_|
-//       |           |
-//       |           |
-//       o-----------o
-//       |           |
-//       |           |
-//      ¯¯¯         |¯|
-//                  | |<------o PIN A1
-//                  |_|
-//                   |
-//                   |
-//                   o +5V
+//
+//                  o +5V
+//                  |
+//      o PIN 9     |
+//      |          |¯| //
+//      |          | |``
+//     _|_         |_|
+//     \ / LED      |
+//     ¯|¯          |
+//      |           o-------o PIN A0
+//      |           |
+//      |           |
+//     |¯|         |¯|
+//     | | 330     | | 10K
+//     |_|         |_|
+//      |           |
+//      |           |
+//      o-----------o
+//      |           |
+//      |           |
+//     ¯¯¯         |¯|
+//                 | |<-----o PIN A1
+//                 |_|
+//                  |
+//                  |
+//                  o +5V
 
 int const photoresistor = 0;
 int const potentiometer = 1;
